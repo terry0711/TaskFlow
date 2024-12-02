@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Flow App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Task Flow</h1>
+      <p>Your all-in-one task management solution!</p>
+    </header>
+
+    <!-- Registration Page -->
+    <div id="registration-page" class="page active">
+      <h2>Create an Account</h2>
+      <form id="registration-form">
+        <input type="text" id="first-name" placeholder="First Name" required>
+        <input type="text" id="last-name" placeholder="Last Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="pin" placeholder="PIN" required>
+        <input type="password" id="confirm-pin" placeholder="Confirm PIN" required>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login-page" class="page">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-pin" placeholder="PIN" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="main-menu" class="page">
+      <h2>Main Menu</h2>
+      <div class="menu-options">
+        <button class="menu-btn" onclick="navigateTo('create-task')">Create Task</button>
+        <button class="menu-btn" onclick="navigateTo('task-list')">Task List</button>
+        <button class="menu-btn" onclick="navigateTo('task-status')">Task Status</button>
+        <button class="menu-btn" onclick="navigateTo('due-date')">Due Date</button>
+        <button class="menu-btn" onclick="navigateTo('settings')">Settings</button>
+      </div>
+    </div>
+
+    <!-- Create Task Page -->
+    <div id="create-task" class="page">
+      <h2>Create Task</h2>
+      <form id="task-form">
+        <input type="text" id="task-name" placeholder="Task Name" required>
+        <input type="date" id="task-date" required>
+        <input type="time" id="task-start" required>
+        <input type="time" id="task-end" required>
+        <select id="task-priority">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <textarea id="task-desc" placeholder="Task Description"></textarea>
+        <button type="submit">Add Task</button>
+      </form>
+      <button class="back-btn" onclick="navigateTo('main-menu')">Back to Main Menu</button>
+    </div>
+
+    <!-- Task List Page -->
+    <div id="task-list" class="page">
+      <h2>Task List</h2>
+      <div id="task-list-container"></div>
+      <button class="back-btn" onclick="navigateTo('main-menu')">Back to Main Menu</button>
+    </div>
+
+    <!-- Task Status Page -->
+    <div id="task-status" class="page">
+      <h2>Task Status</h2>
+      <div id="task-status-container"></div>
+      <button class="back-btn" onclick="navigateTo('main-menu')">Back to Main Menu</button>
+    </div>
+
+    <!-- Due Date Page -->
+    <div id="due-date" class="page">
+      <h2>Due Date</h2>
+      <div id="due-date-container"></div>
+      <button class="back-btn" onclick="navigateTo('main-menu')">Back to Main Menu</button>
+    </div>
+
+    <!-- Settings Page -->
+    <div id="settings" class="page">
+      <h2>Settings</h2>
+      <form id="settings-form">
+        <input type="text" id="update-name" placeholder="Name">
+        <input type="email" id="update-email" placeholder="Email">
+        <label>
+          <input type="checkbox" id="notifications-toggle"> Enable Notifications
+        </label>
+        <button type="submit">Update Settings</button>
+      </form>
+      <button class="back-btn" onclick="navigateTo('main-menu')">Back to Main Menu</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
